@@ -10,8 +10,8 @@ export default function UpdateBook() {
 
   useEffect(() => {
     // Fetch the book details based on the ID
-    axios.get(`http://localhost:5000/${id}`)
-    // axios.get(`https://mern-test1-ochre.vercel.app/${id}`)
+    // axios.get(`http://localhost:5000/${id}`)
+    axios.get(`https://mern-test1-api.vercel.app/${id}`)
       .then((res) => {
         const book = res.data;
         setTitle(book.title);
@@ -30,8 +30,8 @@ export default function UpdateBook() {
     let updatedbook = {title: title , author: author, description: description};
     
     // Construct the correct API endpoint for updating the book
-    const url = `http://localhost:5000/${id}`;
-    // const url = `https://mern-test1-ochre.vercel.app/${id}`;
+    // const url = `http://localhost:5000/${id}`;
+    const url = `https://mern-test1-api.vercel.app/${id}`;
 
     axios
       .put(url, updatedbook)
